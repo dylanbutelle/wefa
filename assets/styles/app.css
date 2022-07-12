@@ -1,3 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;700&display=swap");
+.formRegister {
+  display: flex;
+  justify-content: center;
+}
+.formRegister form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+}
+.formRegister form input {
+  height: 24px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid rgba(174, 170, 170, 0.549);
+  outline: none;
+}
+.formRegister form input:focus {
+  border-bottom: 1px solid #aeaaaa;
+}
 
+h1 {
+  text-align: center;
+}
+
+* {
+  font-family: "Signika", sans-serif;
+}
 
 /*# sourceMappingURL=app.css.map */

@@ -72,7 +72,7 @@ Encore
     //.autoProvidejQuery()
     .addPlugin(
         new CopyWebpackPlugin({
-          patterns: [{ from: "./assets/img", to: "img" }],
+          patterns: [{ from: "./assets/img", to: "img" ,noErrorOnMissing: true}],
         })
       );
     
