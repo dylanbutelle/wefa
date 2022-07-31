@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  <nav>
+    <ul>
+      <li><a href="#">Le classement</a></li>
+      <li><a href="#">Notre histoire</a></li>
+      <li>
+        <a href="#">
+          <img src="{{ asset('./build/img/Logo.png') }}" alt="Logo" />
+        </a>
+      </li>
+      {% if app.user %}
+        <li><a href="{{ path('app_hero_new') }}">Mes héros</a></li>
+      {% else %}
+        <li><a href="{{ path('app_register') }}">Devenir un WEFA</a></li>
+      {% endif %}
+      <li><a href="#">Nous contacter</a></li>
+    </ul>
+  </nav>
+{% endblock %}

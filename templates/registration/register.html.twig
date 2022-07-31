@@ -5,26 +5,33 @@
 {% endblock %}
 
 {% block body %}
+  {% include 'navbar.html.twig' %}
   <h1>
-    Register
+    Devenir un WEFA
   </h1>
   <div class="formRegister">
-    {{ form_start(registrationForm) }}
-    {{ form_widget(registrationForm.name) }}
-    {{ form_widget(registrationForm.surname) }}
-    {{ form_widget(registrationForm.pseudo) }}
-    {{ form_widget(registrationForm.email) }}
-    {{ form_widget(registrationForm.phone) }}
-    {{
-      form_widget(
-        registrationForm.plainPassword,
-        {
-          label: 'Password'
-        }
-      )
-    }}
+    <div class="formContainer">
+      {{ form_start(registrationForm) }}
+      {{ form_widget(registrationForm.name) }}
+      {{ form_widget(registrationForm.surname) }}
+      {{ form_widget(registrationForm.pseudo) }}
+      {{ form_widget(registrationForm.email) }}
+      {{ form_widget(registrationForm.phone) }}
+      {{
+        form_widget(
+          registrationForm.plainPassword,
+          {
+            label: 'Password'
+          }
+        )
+      }}
 
-    <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+      <button type="submit">Commencer l'aventure</button>
+      {{ form_end(registrationForm) }}
+    </div>
+    <p>
+      Vous avez déjà un compte ? <a href="{{ path('app_login') }}">Connectez-vous
+        !</a>
+    </p>
   </div>
 {% endblock %}

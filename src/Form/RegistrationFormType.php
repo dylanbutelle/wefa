@@ -29,13 +29,13 @@ class RegistrationFormType extends AbstractType
             ))
             ->add('phone',TelType::class, [
                 'attr' => [
-                    'placeholder' => 'Phone'
+                    'placeholder' => 'Téléphone'
                 ]
             ]
             )
             ->add('name', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Name'
+                    'placeholder' => 'Nom'
                 ]
             ])
             ->add('pseudo', TextType::class, [
@@ -45,7 +45,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('surname', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Surname'
+                    'placeholder' => 'Prénom'
                 ]
             ])
             ->add('plainPassword', PasswordType::class, [
@@ -54,7 +54,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
-                    'placeholder' => 'Password'
+                    'placeholder' => 'Mot de passe'
                     
                 ],
                 'constraints' => [

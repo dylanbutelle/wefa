@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  New Hero
+{% endblock %}
+
+{% block body %}
+  {% include 'navbar.html.twig' %}
+  <h1>
+    Créer votre héro
+  </h1>
+  <div class="formHero">
+    <div class="formHeroContainer">
+      <div class="heroPreview">
+        <img src="{{ asset('./build/img/0.png') }}" alt="Samourai" />
+      </div>
+      <div class="form">
+        {{ form_start(form) }}
+        {{ form_widget(form.name) }}
+        {{ form_widget(form.tribute) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
