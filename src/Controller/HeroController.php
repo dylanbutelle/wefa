@@ -7,6 +7,7 @@ use App\Entity\User;
 use App\Form\HeroType;
 use App\Repository\HeroRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,12 +29,12 @@ class HeroController extends AbstractController
         $hero = new Hero();
         $form = $this->createForm(HeroType::class, $hero);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-
+            
             $hero->setUser($this->getUser());
+            
+            // $hero->setTribute($request->request->get('tribute'));
             $heroRepository->add($hero, true);
-
             return $this->redirectToRoute('app_hero_index', [], Response::HTTP_SEE_OTHER);
         }
 

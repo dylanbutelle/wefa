@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
-
+{% block javascripts %}
+  {{ encore_entry_script_tags('tributes') }}
+{% endblock %}
 {% block title %}
   New Hero
 {% endblock %}
@@ -17,7 +19,15 @@
       <div class="form">
         {{ form_start(form) }}
         {{ form_widget(form.name) }}
-        {{ form_widget(form.tribute) }}
+        <div class="tributesContainer">
+          <div class="tributeTitle">
+            <p>
+              Votre tribut :
+            </p>
+          </div>
+          <div class="tributes">
+          {{ form_widget(form.tribute) }}
+          
         <button class="btn">{{ button_label|default('Save') }}</button>
         {{ form_end(form) }}
       </div>
